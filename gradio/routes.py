@@ -591,6 +591,7 @@ class App(FastAPI):
 
             # Determine MIME type
             mime_type, _ = mimetypes.guess_type(abs_path)
+            print(mime_type)
             is_image = mime_type and mime_type.startswith("image/")
 
             range_val = request.headers.get("Range", "").strip()
